@@ -5,7 +5,7 @@ from sklearn.metrics import mean_absolute_error
 
 data = pd.read_csv('nba_data.csv')
 
-features = ['player_points_per_game', 'injury_history', 'enemy_team_defensive_rating']
+features = ['ppg', 'fg%', '3p%']
 target = 'points_scored'
 
 X_train, X_test, y_train, y_test = train_test_split(data[features], data[target], random_state=0)
