@@ -1,7 +1,8 @@
 import pandas as pd
-from sklearn.tree import DecisionTreeRegressor
+from sklearn.tree import DecisionTreeRegressor, plot_tree
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error
+import matplotlib.pyplot as plt
 
 data = pd.read_csv('nba_data.csv')
 
@@ -17,8 +18,6 @@ y_pred = model.predict(X_test)
 mae = mean_absolute_error(y_test, y_pred)
 print('Mean Absolute Error:', mae)
 
-from sklearn.tree import plot_tree
-import matplotlib.pyplot as plt
 
 plt.figure(figsize=(20,10))
 plot_tree(model, filled=True, feature_names=features, rounded=True, fontsize=14)
